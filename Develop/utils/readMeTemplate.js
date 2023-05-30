@@ -1,58 +1,72 @@
 
-// Questions to ask user, added to define 'questions'
-const readMeQuestions = require('./readMeQuestions');
-
+// questions to ask user, added to define 'questions'
 // List of Licensing types with links
-const licensingType = {
-  'Apache 2.0': 'https://img.shields.io/badge/License-Apache_2.0-blue.svg',
-  'BSD 3-Clause':
-      'https://img.shields.io/badge/License-BSD_3--Clause-blue.svg',
-  'Eclipse Public License 1.0':
-      'https://img.shields.io/badge/License-EPL_1.0-red.svg',
-  'GNU GPL v3': 'https://img.shields.io/badge/License-GPLv3-blue.svg',
-  ISC: 'https://img.shields.io/badge/License-ISC-blue.svg',
-  MIT: 'https://img.shields.io/badge/License-MIT-yellow.svg',
-  'MPL 2.0': 'https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg',
-  Unlicense: 'https://img.shields.io/badge/license-Unlicense-blue.svg',
-};
+// TODO: Create a function that returns a license badge based on which license is passed in
+// If there is no license, return an empty string
+function renderLicenseBadge(license) {
+  if (license !== 'none'){
+    return ` ![Github license](https://img.shields.io/badge/license-${license.replace(/ /g,'%20')}-blue.svg)`;
+  }
+  else {
+    return ''
+  }
+}
 
+// TODO: Create a function that returns the license link
+// If there is no license, return an empty string
+function renderLicenseLink(license) {
+  if (license !== 'none'){
+    return `* licensing(#license)`
+  }
+  return ''
+}
+
+// TODO: Create a function that returns the license section of README
+// If there is no license, return an empty string
+function renderLicenseSection(license) {
+  if (license !== 'none') {
+    return  `## Licensing \n This project is licensed under the ${license} license`
+  }
+  return ''
+}
+
+function generateReadMe (data) {
 // Generate the template for the readMead
- `# ${questions.title}
-
+ return  `# ${data.title}
+${renderLicenseBadge(data.license)}
 ## Description
-${questions.description}
+${data.description}
 
 ## Table of Contents
-* Description #(description)
-* Table of Contents #(usage)
-* Installation #(license)
-* Usage #(usage)
-* licensing #(license)
-* Constributing #(contributing)
-* Testing #(test)
-* Contact me for questions #(contact)
+* [Description](#description)
+* [Usage](#usage)
+* [Installation](#installation)
+${renderLicenseLink(data.license)}
+* [Contributing](#contributing)
+* [Testing](#testing)
+* [Contact me for questions](#contact)
 
 ## Installation
-${questions.instalation}
+${data.installation}
 
 ## Usage
-${questions.nameusage}
+${data.usage}
 
-## Licensing
-${questions.licensingType}
+${renderLicenseSection(data.license)}
 
-## Constributing
-${questions.contributing}
+## Contributing
+${data.contributing}
 
-## testings
-${questions.nametesting}
+## Testing
+${data.testing}
 
-Contact me for questions
+## Contact
 
 GitHub
-> ${questions.userGitHub}
+[${data.userGitHub}](https://GitHub.com/${data.userGitHub})\n
 Email
-> ${questions.userEmail}
-`
+${data.userEmail}
 
-//module.exports = readMeTemplate;
+`
+};
+module.exports = generateReadMe

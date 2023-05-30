@@ -1,38 +1,38 @@
 
 const questions = [
     {
-        inputType: 'input',
-        sectionName: 'title',
+        type: 'input',
+        name: 'title',
         message: 'What is the project title?'
     },
     {
-        inputType: 'input',
-        sectionName: 'description',
+        type: 'input',
+        name: 'description',
         message: 'Enter a descritption of the project.'
     },
     {
-        inputType: 'input',
-        sectionName: 'installation',
+        type: 'input',
+        name: 'installation',
         message: 'Enter installation instructions.'
     },
     {
-        inputType: 'input',
-        sectionName: 'usage',
+        type: 'input',
+        name: 'usage',
         message: 'What is usage for this project?'
     },
     {
-        inputType: 'input',
-        sectionName: 'contributing',
+        type: 'input',
+        name: 'contributing',
         message: 'Please enter the contributors for this project.'
     },
     {
-        inputType: 'input',
-        sectionName: 'testing',
+        type: 'input',
+        name: 'testing',
         message: 'what is the testing procedure'
     },
     {
-        inputType: 'checkbox',
-        sectionName: 'licence',
+        type: 'list',
+        name: 'license',
         message: 'Please select a license.',
         choices: [
             'Apache 2.0',
@@ -43,19 +43,20 @@ const questions = [
             'MIT',
             'MPL 2.0',
             'Unlicense',
+            'none'
         ],
     },
     {
-        inputType: 'input',
-        sectionName: 'userGitHub',
+        type: 'input',
+        name: 'userGitHub',
         message: 'enter your GitHub user name.'
     },
     {
-        inputType: 'input',
-        sectionName: 'userEmail',
+        type: 'input',
+        name: 'userEmail',
         message: 'what is your email?'
     }
 ];
 
 
-//module.exports = readMeQuestions;
+module.exports = questions

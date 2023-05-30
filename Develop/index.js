@@ -1,6 +1,7 @@
 
 // Questions to ask user
-const readMeQuestions = require('./utils/readMeQuestions');
+const questions = require('./utils/readMeQuestions');
+const generateReadMe = require('./utils/readMeTemplate');
 
 // Answers printed into template
 const readMeTemplate = require('./utils/readMeTemplate');
@@ -14,17 +15,10 @@ function init() {
        inquirer
         .prompt(questions)
           .then(response => {
-             writeToFile('readMETemplate.md', response)
+             fs.writeFileSync('README.md', generateReadMe(response));
              console.log('ReadMe sucessfully Created')
             });
 }
 
 // Function call to initialize app
 init();
-
-
-//help make work
-
-//help line 52 read me
-
-//help deploy active app on github
