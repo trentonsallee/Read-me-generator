@@ -1,30 +1,27 @@
-# Read-Me Generator
+# README Generator
 
 ## Description
-This project uses javascript to dynamically create a READ-ME file bases on users input. Please note that this READ-ME file was created using this project.
+This project dynamically creates a README file. The user answers promted questions, when finished, a README file is created. Please note this README file was created with this application.
 
 ## Table of Contents
 * [Description](#description)
 * [Usage](#usage)
 * [Installation](#installation)
-
 * [Contributing](#contributing)
 * [Testing](#testing)
 * [Contact me for questions](#contact)
 
 ## Installation
-This project consists only of 3 javascript files. In order to run this project, please use Node.
+When the app is downloaded, please install the node_modules package by running "NPM I" in your Terminal. 
 
 ## Usage
-This project is used to create Read Me files that are common on GitHub. Usage is for any project uploaded to GitHub.
-
-
+This project creates a README file for any application.
 
 ## Contributing
-Trenton Salle. Please see the "Contact" section for reaching out.
+This project was only created by one individual. Please see "Contact" section for desginer information.
 
 ## Testing
-This project has no testing procedure.
+Please run "index.js" in your terminal to use and test.
 
 ## Contact
 

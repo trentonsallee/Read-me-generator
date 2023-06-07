@@ -1,7 +1,6 @@
 
-// questions to ask user, added to define 'questions'
+// Questions to ask user, added to define 'questions'
 // List of Licensing types with links
-// TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   if (license !== 'none'){
@@ -12,20 +11,18 @@ function renderLicenseBadge(license) {
   }
 }
 
-// TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   if (license !== 'none'){
-    return `* [Licensing](#licensing)`
+    return `\n* [Licensing](#licensing)`
   }
   return ''
 }
 
-// TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   if (license !== 'none') {
-    return  `## Licensing \n This project is licensed under the ${license} license`
+    return  `\n## Licensing \n This project is licensed under the ${license} license \n`
   }
   return ''
 }
@@ -40,8 +37,7 @@ ${data.description}
 ## Table of Contents
 * [Description](#description)
 * [Usage](#usage)
-* [Installation](#installation)
-${renderLicenseLink(data.license)}
+* [Installation](#installation)${renderLicenseLink(data.license)}
 * [Contributing](#contributing)
 * [Testing](#testing)
 * [Contact me for questions](#contact)
@@ -51,9 +47,7 @@ ${data.installation}
 
 ## Usage
 ${data.usage}
-
 ${renderLicenseSection(data.license)}
-
 ## Contributing
 ${data.contributing}
 
